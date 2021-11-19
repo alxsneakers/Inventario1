@@ -28,17 +28,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listaProductos = findViewById(R.id.listaProductos);
-        listaProductos.setLayoutManager(new LinearLayoutManager(this));
 
-        DbProductos dbProductos = new DbProductos(MainActivity.this);
-
-        listaArrayProductos = new ArrayList<>();
-
-        //Le enviamos todos los resultados de la consulta
-        ListaProductosAdapter adapter = new ListaProductosAdapter(dbProductos.mostrarProductos());
-        //Traemos a listacontactos y le enviamos el adaptador
-        listaProductos.setAdapter(adapter);
 
         //Timer para cargar la siguiente actividad
         TimerTask tarea = new TimerTask() {
