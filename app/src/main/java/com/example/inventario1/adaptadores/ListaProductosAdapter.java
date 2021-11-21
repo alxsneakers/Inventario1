@@ -15,14 +15,20 @@ import com.example.inventario1.VerProductoActivity;
 import com.example.inventario1.entidades.Productos;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 //Adaptador para asignar los valores a la vista a lista_item_Producto y mostrarlos en el recycled
 public class ListaProductosAdapter extends RecyclerView.Adapter<ListaProductosAdapter.ProductoViewHolder> {
 
     ArrayList<Productos> listaProductos;
+    ArrayList<Productos> listaOriginal;
+
 
     public ListaProductosAdapter(ArrayList<Productos> listaProductos){
         this.listaProductos = listaProductos;
+        listaOriginal = new ArrayList<>();
+        listaOriginal.addAll(listaProductos);
     }
 
 
@@ -47,6 +53,32 @@ public class ListaProductosAdapter extends RecyclerView.Adapter<ListaProductosAd
         //holder.viewPrecio.setText(double(listaProductos.get(position).getPrecio()));
         holder.viewGenero.setText(listaProductos.get(position).getGenero());
 
+    }
+
+    //Buscador
+    public void filtrado(String txtBuscar){
+        int longitud = txtBuscar.length();
+
+        if(longitud == 0){
+            listaProductos.clear();
+            listaProductos.addAll(listaOriginal);
+        }else {
+            //Buscar por item para dos versiones de android
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                List<Productos> collecion = listaProductos.stream()
+                        .filter(i -> i.getItem().toLowerCase().contains(txtBuscar.toLowerCase()))
+                        .collect(Collectors.toList());
+                listaProductos.clear();
+                listaProductos.addAll(collecion);
+            }else{
+                for(Productos c: listaProductos){
+                    if(c.getItem().toLowerCase().contains(txtBuscar.toLowerCase())){
+                        listaProductos.add(c);
+                    }
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     @Override

@@ -14,7 +14,7 @@
         <TextView
             android:id="@+id/txtTitulo3"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="67dp"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -25,16 +25,35 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+        <SearchView
+            android:id="@+id/txtBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaProductos"
             android:layout_width="match_parent"
-            android:layout_height="574dp"
+            android:layout_height="520dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1">
 
         </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNuevo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            app:backgroundTint="@color/azul_Botones"
+            app:srcCompat="@drawable/ic_edit" />
 
     </LinearLayout>
 </LinearLayout>

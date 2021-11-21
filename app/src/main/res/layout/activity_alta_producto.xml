@@ -121,23 +121,23 @@
 
             <RadioButton
                 android:id="@+id/rBtnMujer"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center"
                 android:text="MUJER" />
 
             <RadioButton
                 android:id="@+id/rBtnHombre"
-                android:layout_width="wrap_content"
+                android:layout_width="103dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center"
                 android:text="HOMBRE" />
 
             <RadioButton
                 android:id="@+id/rBtnUnisex"
-                android:layout_width="wrap_content"
+                android:layout_width="93dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center"
                 android:text="UNISEX" />
 
         </RadioGroup>
