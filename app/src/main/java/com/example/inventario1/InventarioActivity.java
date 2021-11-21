@@ -12,7 +12,7 @@ import com.example.inventario1.entidades.Productos;
 
 import java.util.ArrayList;
 
-public class Inventario extends AppCompatActivity {
+public class InventarioActivity extends AppCompatActivity {
 
     RecyclerView listaProductos;
     ArrayList<Productos> listaArrayProductos;
@@ -25,7 +25,7 @@ public class Inventario extends AppCompatActivity {
         listaProductos = findViewById(R.id.listaProductos);
         listaProductos.setLayoutManager(new LinearLayoutManager(this));
 
-        DbProductos dbProductos = new DbProductos(Inventario.this);
+        DbProductos dbProductos = new DbProductos(InventarioActivity.this);
 
         listaArrayProductos = new ArrayList<>();
 

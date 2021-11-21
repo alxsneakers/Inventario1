@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Menu extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,12 +14,12 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
     }
     public void btnEntrada(View view) {
-        Intent i = new Intent(this, AltaProducto.class );
+        Intent i = new Intent(this, AltaProductoActivity.class );
         startActivity(i);
     }
 
     public void btnInventario(View view) {
-        Intent i = new Intent(this, Inventario.class );
+        Intent i = new Intent(this, InventarioActivity.class );
         startActivity(i);
     }
 }

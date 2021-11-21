@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="strTallas">
-        <item>-</item>
+        <item>-Talla-</item>
         <item>XS</item>
         <item>S</item>
         <item>M</item>

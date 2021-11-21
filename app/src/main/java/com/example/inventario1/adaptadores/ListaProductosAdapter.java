@@ -1,5 +1,7 @@
 package com.example.inventario1.adaptadores;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.inventario1.R;
+import com.example.inventario1.VerProductoActivity;
 import com.example.inventario1.entidades.Productos;
 
 import java.util.ArrayList;
@@ -56,6 +59,7 @@ public class ListaProductosAdapter extends RecyclerView.Adapter<ListaProductosAd
     public class ProductoViewHolder extends RecyclerView.ViewHolder {
 
         //Identificamos los elementos
+        //Asignamos low view de nuestra lista a la plantilla individual
         TextView viewItem, viewSKU, viewTalla, viewFecha, viewPrecio, viewGenero;
         public ProductoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +69,17 @@ public class ListaProductosAdapter extends RecyclerView.Adapter<ListaProductosAd
             viewFecha = itemView.findViewById(R.id.viewFecha);
             viewPrecio = itemView.findViewById(R.id.viewPrecio);
             viewGenero = itemView.findViewById(R.id.viewGenero);
+
+            //on click para abrir el producto y llevarnos a verActivity para ver los detalles
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context, VerProductoActivity.class);
+                    intent.putExtra("ID", listaProductos.get(getAdapterPosition()).getID());
+                    context.startActivity(intent);
+                }
+            });
 
         }
     }

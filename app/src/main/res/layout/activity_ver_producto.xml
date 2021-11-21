@@ -4,39 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AltaProductoActivity">
+    tools:context=".VerProductoActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtTitulo"
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:paddingTop="20dp"
-            android:text="Entrada de productos"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_height="46dp" />
 
-        <EditText
-            android:id="@+id/editTxtSKU"
+        <TextView
+            android:id="@+id/viewItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="SKU*"
-            android:inputType="textPersonName" />
+            android:text="Item:" />
 
         <EditText
             android:id="@+id/editTxtItem"
@@ -48,8 +34,37 @@
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Item*"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:labelFor="@+id/viewItem" />
+
+        <TextView
+            android:id="@+id/viewSKU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="SKU:" />
+
+        <EditText
+            android:id="@+id/editTxtSKU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:labelFor="@+id/viewSKU" />
+
+        <TextView
+            android:id="@+id/viewTalla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Talla:" />
 
         <Spinner
             android:id="@+id/spnrTallas"
@@ -60,7 +75,16 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:entries="@array/strTallas" />
+            android:entries="@array/strTallas"
+            android:labelFor="@+id/viewTalla" />
+
+        <TextView
+            android:id="@+id/viewFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Fecha:" />
 
         <EditText
             android:id="@+id/editTxtFecha"
@@ -72,8 +96,16 @@
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="DD/MM/AA"
-            android:inputType="date" />
+            android:inputType="date"
+            android:labelFor="@+id/viewFecha" />
+
+        <TextView
+            android:id="@+id/viewPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Precio:" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,8 +114,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
-            android:layout_weight="1"
+
             android:orientation="horizontal">
+
 
             <EditText
                 android:id="@+id/editTxtPrecio"
@@ -95,24 +128,32 @@
                 android:freezesText="false"
                 android:hint="PRECIO"
                 android:inputType="numberDecimal"
+                android:labelFor="@+id/viewPrecio"
                 android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/textVieweuro"
-                android:layout_width="45dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="€"
                 android:textAlignment="center"
                 android:textSize="20sp" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/viewGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Genero:" />
+
         <RadioGroup
             android:id="@+id/radioGroupBtnGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
@@ -123,21 +164,21 @@
                 android:id="@+id/rBtnMujer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:text="MUJER" />
 
             <RadioButton
                 android:id="@+id/rBtnHombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:text="HOMBRE" />
 
             <RadioButton
                 android:id="@+id/rBtnUnisex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:text="UNISEX" />
 
         </RadioGroup>
@@ -152,11 +193,39 @@
             android:text="Guardar"
             android:textColor="@color/azul_text_Btn" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="top|end"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabEditar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+
+                android:padding="100dp"
+                android:src="@drawable/ic_edit"
+                app:backgroundTint="@color/azul_Botones" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/ic_delete"
+                app:backgroundTint="@color/azul_Botones" />
+        </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_weight="1" />
+            android:layout_height="64dp" />
 
     </LinearLayout>
+
 
 </LinearLayout>

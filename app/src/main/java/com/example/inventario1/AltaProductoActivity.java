@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -12,12 +11,12 @@ import android.widget.Toast;
 
 import com.example.inventario1.db.DbProductos;
 
-public class AltaProducto extends AppCompatActivity {
+public class AltaProductoActivity extends AppCompatActivity {
 
     EditText editTxtSKU, editTxtItem, editTxtFecha, editTxtPrecio;
     Spinner spnrTallas;
     Button btnGuardar;
-    //FALTA GENERO CHECKBOX
+    //FALTA GENERO CHECKBOX PRECIO
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +48,16 @@ public class AltaProducto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //LLamamos al metodo para insertar un registro
-                DbProductos dbProductos = new DbProductos(AltaProducto.this);
+                DbProductos dbProductos = new DbProductos(AltaProductoActivity.this);
 
                 //Falta talla precio genero
                 long id = dbProductos.insertarProducto(editTxtSKU.getText().toString(), editTxtItem.getText().toString(), editTxtFecha.getText().toString());
 
                 if(id>0){
-                    Toast.makeText(AltaProducto.this,"REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AltaProductoActivity.this,"REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
                     limpiar();
                 } else{
-                    Toast.makeText(AltaProducto.this,"ERROR ALREGISTRO GUARDADO", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AltaProductoActivity.this,"ERROR AL GUARDAR REGISTRO", Toast.LENGTH_LONG).show();
 
                 }
 

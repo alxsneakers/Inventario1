@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Inventario">
+    tools:context=".InventarioActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,21 +14,21 @@
         <TextView
             android:id="@+id/txtTitulo3"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="2dp"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:paddingTop="20dp"
-            android:text="Entrada de productos"
+            android:text="Inventario"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaProductos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="574dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
@@ -36,9 +36,5 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>

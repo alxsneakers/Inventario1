@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.inventario1">
+    package="com.example.inventario1" >
 
     <application
         android:allowBackup="true"
@@ -8,22 +8,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Inventario1">
+        android:theme="@style/Theme.Inventario1" >
         <activity
-            android:name=".Inventario"
+            android:name=".EditarProductoActivity"
             android:exported="false" />
         <activity
-            android:name=".AltaProducto"
+            android:name=".VerProductoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InventarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AltaProductoActivity"
             android:exported="false"
             android:label="Agregar Producto Almacen"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Menu"
+            android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
