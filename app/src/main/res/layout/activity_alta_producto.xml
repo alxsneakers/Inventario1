@@ -51,17 +51,6 @@
             android:hint="Item*"
             android:inputType="textPersonName" />
 
-        <Spinner
-            android:id="@+id/spnrTallas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:entries="@array/strTallas" />
-
         <EditText
             android:id="@+id/editTxtFecha"
             android:layout_width="match_parent"
@@ -75,6 +64,18 @@
             android:hint="DD/MM/AA"
             android:inputType="date" />
 
+        <Spinner
+            android:id="@+id/spnrTallas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:entries="@array/strTallas"
+            android:visibility="invisible" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,7 +84,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <EditText
                 android:id="@+id/editTxtPrecio"
@@ -117,7 +119,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <RadioButton
                 android:id="@+id/rBtnMujer"

@@ -60,34 +60,12 @@
             android:labelFor="@+id/viewSKU"/>
 
         <TextView
-            android:id="@+id/viewTalla"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Talla:"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            />
-
-        <Spinner
-            android:id="@+id/spnrTallas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:entries="@array/strTallas"
-            android:labelFor="@+id/viewTalla"/>
-
-        <TextView
             android:id="@+id/viewFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fecha:"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            />
+            android:text="Fecha:" />
 
         <EditText
             android:id="@+id/editTxtFecha"
@@ -100,16 +78,38 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="date"
-            android:labelFor="@+id/viewFecha"/>
+            android:labelFor="@+id/viewFecha" />
+
+        <TextView
+            android:id="@+id/viewTalla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Talla:"
+            android:visibility="invisible" />
+
+        <Spinner
+            android:id="@+id/spnrTallas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:entries="@array/strTallas"
+            android:labelFor="@+id/viewTalla"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/viewPrecio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Precio:"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            />
+            android:text="Precio:"
+            android:visibility="invisible" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -132,8 +132,9 @@
                 android:freezesText="false"
                 android:hint="PRECIO"
                 android:inputType="numberDecimal"
+                android:labelFor="@+id/viewPrecio"
                 android:textAlignment="viewEnd"
-                android:labelFor="@+id/viewPrecio"/>
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/textVieweuro"
@@ -143,16 +144,19 @@
                 android:gravity="center"
                 android:text="€"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="invisible" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/viewGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Genero:"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            />
+            android:text="Genero:"
+            android:visibility="invisible" />
+
         <RadioGroup
             android:id="@+id/radioGroupBtnGenero"
             android:layout_width="match_parent"
@@ -162,7 +166,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <RadioButton
                 android:id="@+id/rBtnMujer"
