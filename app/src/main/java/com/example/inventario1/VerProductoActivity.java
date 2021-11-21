@@ -93,7 +93,7 @@ public class VerProductoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(VerProductoActivity.this);
-                builder.setMessage("¿Desea Eliminar este contacto?.")
+                builder.setMessage("¿Desea eliminar este registro?.")
                         .setPositiveButton("SI", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {

@@ -53,7 +53,7 @@
             android:layout_marginBottom="20dp"
             android:clickable="true"
             app:backgroundTint="@color/azul_Botones"
-            app:srcCompat="@drawable/ic_edit" />
+            app:srcCompat="@drawable/ic_baseline_add_24" />
 
     </LinearLayout>
 </LinearLayout>
