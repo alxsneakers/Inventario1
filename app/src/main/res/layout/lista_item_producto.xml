@@ -7,8 +7,11 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
@@ -20,21 +23,12 @@
 
             <TextView
                 android:id="@+id/viewItem"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="38dp"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/viewTalla"
-                android:layout_width="match_parent"
-                android:layout_height="38dp" />
         </LinearLayout>
-
-        <androidx.constraintlayout.widget.Barrier
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:barrierDirection="top" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +37,7 @@
 
             <TextView
                 android:id="@+id/viewSKU"
-                android:layout_width="300dp"
+                android:layout_width="173dp"
                 android:layout_height="30dp" />
 
             <TextView
@@ -55,13 +49,19 @@
         <TextView
             android:id="@+id/viewPrecio"
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="1dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/viewTalla"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:visibility="invisible" />
 
         <TextView
             android:id="@+id/viewGenero"
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="1dp"
             android:visibility="invisible" />
 
     </LinearLayout>
