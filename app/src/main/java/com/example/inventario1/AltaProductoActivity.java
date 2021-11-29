@@ -2,20 +2,27 @@ package com.example.inventario1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.inventario1.db.DbProductos;
 
+import java.util.Calendar;
+
 public class AltaProductoActivity extends AppCompatActivity {
 
     EditText editTxtSKU, editTxtItem, editTxtFecha, editTxtPrecio;
     Spinner spnrTallas;
     Button btnGuardar;
+    boolean correcto = false;
+
     //FALTA GENERO CHECKBOX PRECIO
 
     @Override
@@ -28,6 +35,9 @@ public class AltaProductoActivity extends AppCompatActivity {
         editTxtSKU = findViewById(R.id.editTxtSKU);
         editTxtItem = findViewById(R.id.editTxtItem);
         editTxtFecha = findViewById(R.id.editTxtFecha);
+        //Desactivar teclado
+        editTxtFecha.setInputType(InputType.TYPE_NULL);
+
         editTxtPrecio = findViewById(R.id.editTxtPrecio);
 
         spnrTallas = findViewById(R.id.spnrTallas);
@@ -51,15 +61,25 @@ public class AltaProductoActivity extends AppCompatActivity {
                 DbProductos dbProductos = new DbProductos(AltaProductoActivity.this);
 
                 //Falta talla precio genero
-                long id = dbProductos.insertarProducto(editTxtSKU.getText().toString(), editTxtItem.getText().toString(), editTxtFecha.getText().toString());
 
-                if(id>0){
-                    Toast.makeText(AltaProductoActivity.this,"REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
-                    limpiar();
+
+                //Verificacion para campos vacios en el alta
+                if(!editTxtSKU.getText().toString().equals("") && !editTxtItem.getText().toString().equals("")){
+                    long id = dbProductos.insertarProducto(editTxtSKU.getText().toString(), editTxtItem.getText().toString(), editTxtFecha.getText().toString());
+
+                    if(id>0){
+                        Toast.makeText(AltaProductoActivity.this,"REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
+                        limpiar();
+                    } else{
+                        Toast.makeText(AltaProductoActivity.this,"ERROR AL GUARDAR REGISTRO", Toast.LENGTH_LONG).show();
+
+                    }
                 } else{
-                    Toast.makeText(AltaProductoActivity.this,"ERROR AL GUARDAR REGISTRO", Toast.LENGTH_LONG).show();
-
+                    Toast.makeText(AltaProductoActivity.this, "DEBE LLENAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
                 }
+
+
+
 
             }
         });
@@ -73,6 +93,24 @@ public class AltaProductoActivity extends AppCompatActivity {
         editTxtItem.setText("");
         editTxtFecha.setText("");
         editTxtPrecio.setText("");
+
+    }
+
+
+    public void abrirCalendario(View view) {
+        Calendar cal = Calendar.getInstance();
+        int anio = cal.get(Calendar.YEAR);
+        int mes = cal.get(Calendar.MONTH);
+        int dia = cal.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog dpd = new DatePickerDialog(AltaProductoActivity.this, R.style.DialogTheme ,new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String fecha = dayOfMonth + "/" + month + "/" + year  ;
+                editTxtFecha.setText(fecha);
+            }
+        },anio,mes,dia);
+        dpd.show();
 
     }
 

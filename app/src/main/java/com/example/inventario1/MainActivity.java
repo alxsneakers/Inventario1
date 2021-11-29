@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
         };
 
         Timer tiempo = new Timer();
-        tiempo.schedule(tarea, 1000);
+        tiempo.schedule(tarea, 3000);
 
 
 

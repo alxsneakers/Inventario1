@@ -51,7 +51,7 @@ public class DbProductos extends AdminSQLiteOpenHelper{
 
     //Funcion para mostrar los productos en la activity Inventario
     public ArrayList<Productos> mostrarProductos(){
-        //Creamos la base de datos
+        //llamamos a la base de datos
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context);
         SQLiteDatabase db = admin.getWritableDatabase();
 

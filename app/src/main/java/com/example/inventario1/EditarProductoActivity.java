@@ -2,11 +2,13 @@ package com.example.inventario1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,13 +16,15 @@ import com.example.inventario1.db.DbProductos;
 import com.example.inventario1.entidades.Productos;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.Calendar;
+
 public class EditarProductoActivity extends AppCompatActivity {
     //Vamos a recibir el id que nos esta pasando la lista, llamaremos al metodo para traer la informacion del registro
 
 
     //FALTA HACER PRECIO
     EditText editTxtSKU, editTxtItem, editTxtFecha, editTxtPrecio;
-    Button btnGuardar;
+    Button btnGuardar, btnCalendario;
     boolean correcto = false;
     Productos producto;
 
@@ -37,6 +41,9 @@ public class EditarProductoActivity extends AppCompatActivity {
         editTxtSKU = findViewById(R.id.editTxtSKU);
         editTxtItem = findViewById(R.id.editTxtItem);
         editTxtFecha = findViewById(R.id.editTxtFecha);
+        //Desactivar teclado
+        editTxtFecha.setInputType(InputType.TYPE_NULL);
+
         editTxtPrecio = findViewById(R.id.editTxtPrecio);
         fabEditar = findViewById(R.id.fabEditar);
         fabEditar.setVisibility(View.INVISIBLE);
@@ -45,6 +52,7 @@ public class EditarProductoActivity extends AppCompatActivity {
 
 
         btnGuardar = findViewById(R.id.btnGuardar);
+        //btnCalendario = findViewById(R.id.btnCalendario);
 
         //Recibir la variable id
 
@@ -101,5 +109,23 @@ public class EditarProductoActivity extends AppCompatActivity {
         Intent intent = new Intent(this, VerProductoActivity.class);
         intent.putExtra("ID", id);
         startActivity(intent);
+    }
+
+
+    public void editarCalendario(View view) {
+        Calendar cal = Calendar.getInstance();
+        int anio = cal.get(Calendar.YEAR);
+        int mes = cal.get(Calendar.MONTH);
+        int dia = cal.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog dpd = new DatePickerDialog(EditarProductoActivity.this, R.style.DialogTheme ,new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String fecha = dayOfMonth + "/" + month + "/" + year  ;
+                editTxtFecha.setText(fecha);
+            }
+        },anio,mes,dia);
+        dpd.show();
+
     }
 }

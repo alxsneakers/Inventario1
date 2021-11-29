@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Fecha:" />
+            android:text="Fecha:"/>
 
         <EditText
             android:id="@+id/editTxtFecha"
@@ -78,7 +78,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="date"
-            android:labelFor="@+id/viewFecha" />
+            android:labelFor="@+id/viewFecha"
+            android:onClick="editarCalendario"
+            tools:ignore="OnClick"/>
 
         <TextView
             android:id="@+id/viewTalla"

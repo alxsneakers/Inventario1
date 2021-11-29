@@ -7,8 +7,8 @@
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.27395833333333336" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.27395833333333336" />
         <entry key="app/src/main/res/drawable/ic_list.xml" value="0.27395833333333336" />
-        <entry key="app/src/main/res/layout/activity_alta_producto.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_editar_producto.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_alta_producto.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_editar_producto.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_inventario.xml" value="0.2731006160164271" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.335" />

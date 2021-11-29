@@ -23,7 +23,8 @@
             android:paddingTop="20dp"
             android:text="Entrada de productos"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <EditText
             android:id="@+id/editTxtSKU"
@@ -62,7 +63,10 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="DD/MM/AA"
-            android:inputType="date" />
+            android:inputType="date"
+            android:onClick="abrirCalendario"
+            tools:ignore="OnClick"/>
+
 
         <Spinner
             android:id="@+id/spnrTallas"
